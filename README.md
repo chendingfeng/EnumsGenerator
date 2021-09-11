@@ -60,7 +60,7 @@ export class Enums {
 ```
 
 ### 使用方法
-* 工具jar包下载地址：[阿里云盘](https://www.aliyundrive.com/s/2jrNxvKh8MG)
+* 工具jar包下载地址：[阿里云盘下载](https://www.aliyundrive.com/s/2jrNxvKh8MG)
 > 注意 该jar包运行入口函数必须传入2个参数  
 
 |  参数   | 描述  |
