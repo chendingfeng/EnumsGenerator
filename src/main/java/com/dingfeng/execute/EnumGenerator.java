@@ -161,7 +161,7 @@ public class EnumGenerator {
                     "  }\n" +
                     "\n" +
                     "}");
-            writeJs(buffer, outputPath);
+            writeJs(buffer, enumsPath, outputPath);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -220,7 +220,7 @@ public class EnumGenerator {
      * @param outputPath 枚举的js文件输出路径
      * @return void
      */
-    public static void writeJs(StringBuffer stringBuffer, String outputPath) {
+    public static void writeJs(StringBuffer stringBuffer, String enumsPath, String outputPath) {
         FileOutputStream out = null;
         try {
             out = new FileOutputStream(outputPath);
@@ -228,6 +228,7 @@ public class EnumGenerator {
             osw.write(stringBuffer.toString());
             osw.close();
             System.out.println("已帮你将枚举写入JS文件：" + outputPath);
+            deleteClassFile(enumsPath);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -347,6 +348,23 @@ public class EnumGenerator {
             bufferObject.append("\r\n");
         }
         bufferObject.append("\r\n");
+    }
+
+    /**
+     * 删除编译后产生的字节码文件
+     * @author chendingfeng
+     * @date 2021/09/13 18:15
+     * @return void
+     */
+    public static void deleteClassFile(String packagePath) {
+        File[] list = new File(packagePath).listFiles();
+        // 编译
+        for (File file : list) {
+            if (getFileExtension(file).equals("class")) {
+                file.delete();
+            }
+        }
+
     }
 
 }
