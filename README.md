@@ -2,10 +2,9 @@
 
 ### 前言
 在开发阶段，可能我们的Java项目中需要定义大量枚举类，而对于前端来说，所有的枚举值都必须与其一一对应，在前端构建枚举以及维护枚举类也是一项耗时工作，由此，编写了这个前端枚举类生成工具，以便对项目中的枚举统一生成以及管理。
-
+> github地址：[chendingfengmail@163.com](https://github.com/chendingfeng/EnumsGenerator)
 ### 构建思路
 ![](https://dingfeng-blog.oss-cn-beijing.aliyuncs.com/enumsGenerator/%E6%88%AA%E5%B1%8F2021-09-11%20%E4%B8%8B%E5%8D%883.17.17.png)
-
 ### 前后端枚举属性对应
 |  Java枚举属性   | 前端枚举属性  |
 |  ----  | ----  |
