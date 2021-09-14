@@ -66,10 +66,15 @@ export class Enums {
 |  参数   | 描述  |
    |  ----  | ----  |
 | args[0]  | 存放java枚举文件的目录 |
-| args[1]  | 保存输出枚举JS文件位置 |
+| args[1]  | 保存输出枚举JS文件位置（可传入文件夹或包含后缀的文件全路径，若传入文件夹则默认生成的文件名为Enums.js） |
 
 方式1. 通过 `java -Dfile.encoding="utf-8" -jar EnumsGenerator.jar args[0] args[1]` 命令运行 EnumsGenerator.jar  
 
 方式2. 如下图所示，通过 `java -Dfile.encoding="utf-8" -jar EnumsGenerator.jar` 运行jar包，按提示输入参数即可。
 
 ![](https://dingfeng-blog.oss-cn-beijing.aliyuncs.com/enumsGenerator/%E6%88%AA%E5%B1%8F2021-09-11%20%E4%B8%8B%E5%8D%882.32.30.png)
+
+### 问题
+问题一： 关于导包无法找到 `com.sun.tools` 包的问题  
+解决： 这里依赖的tools包是jdk/lib 下的tools包 将其安装到本地仓库即可；
+安装tools包命令： `mvn install:install-file -Dfile="%cur_dir%\tools-1.8.0.jar" -DgroupId=com.sun -DartifactId=tools -Dversion=1.8.0 -Dpackaging=jar`

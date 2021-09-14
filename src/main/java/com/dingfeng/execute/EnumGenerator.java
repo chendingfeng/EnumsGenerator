@@ -223,6 +223,10 @@ public class EnumGenerator {
     public static void writeJs(StringBuffer stringBuffer, String enumsPath, String outputPath) {
         FileOutputStream out = null;
         try {
+            File file = new File(outputPath);
+            if(file.isDirectory()){
+                outputPath = outputPath.concat("\\Enums.js");
+            }
             out = new FileOutputStream(outputPath);
             OutputStreamWriter osw = new OutputStreamWriter(out, "UTF-8");
             osw.write(stringBuffer.toString());
